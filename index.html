@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Logical Programs Challenge</title>
+<style>
+    /* Google Fonts for a nicer look */
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+    body {
+        font-family: "Poppins", sans-serif;
+        background: linear-gradient(160deg, #232526, #414345, #485563, #29323c);
+        color: #fff;
+        text-align: center;
+        margin: 0;
+        padding: 40px;
+    }
+    h1 {
+        text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+        margin-bottom: 30px;
+    }
+
+    /* Tabs container */
+    .tabs {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 25px;
+    }
+    .tab {
+        background: rgba(255,255,255,0.2);
+        padding: 12px 25px;
+        margin: 0 5px;
+        border-radius: 10px 10px 0 0;
+        cursor: pointer;
+        font-weight: bold;
+        transition: 0.3s;
+        color: #fff;
+    }
+    .tab:hover {
+        background: rgba(255,255,255,0.4);
+    }
+    .tab.active {
+        background: #fff;
+        color: #333;
+    }
+
+    /* Program content area */
+    .content {
+        width: 85%;
+        margin: auto;
+        background: rgba(0, 0, 0, 0.25);
+        border-radius: 15px;
+        padding: 25px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        text-align: left;
+    }
+    pre {
+        background: rgba(0,0,0,0.3);
+        padding: 15px;
+        border-radius: 10px;
+        overflow-x: auto;
+        color: #f8f8f8;
+        font-size: 15px;
+    }
+    h2 {
+        color: #f6e58d;
+        text-align: center;
+    }
+    
+    /* Input and validation area styling */
+    .validation-area {
+        width: 85%;
+        margin: 25px auto;
+        background: rgba(0, 0, 0, 0.25);
+        border-radius: 15px;
+        padding: 25px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        text-align: center; /* Center the contents */
+    }
+
+    input[type="text"] {
+        width: 60%;
+        padding: 10px;
+        border-radius: 5px;
+        border: none;
+        margin: 5px 0 15px 0;
+        font-size: 16px;
+    }
+    button {
+        padding: 10px 25px;
+        border: none;
+        border-radius: 8px;
+        background: #f6e58d;
+        color: #333;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.3s;
+        font-size: 16px;
+    }
+    button:hover {
+        background: #fff;
+    }
+    #nextClue a {
+        text-decoration: none;
+        color: #00ffff;
+        font-weight: bold;
+        font-size: 18px;
+    }
+</style>
+</head>
+<body>
+
+<h1>💻 Logical Programs Challenge</h1>
+
+<div class="tabs">
+    <div class="tab active" onclick="showTab('python')">🐍 Python</div>
+    <div class="tab" onclick="showTab('java')">☕ Java</div>
+    <div class="tab" onclick="showTab('c')">⚙️ C</div>
+</div>
+
+<div id="python" class="content">
+    <h2>🐍 Python</h2>
+    <b>Input: arr = [3,7,2,9,5]</b><br>
+    
+    <pre>
+def fun5(arr):
+    k = arr[0]
+    for i in range(1, len(arr)):
+        if arr[i] > k:
+            k = arr[i]
+    return k
+    </pre>
+
+    <b>Input: s = "happy"</b><br>
+    
+    <pre>
+def fun2(s):
+    v = ''
+    for i in range(len(s) - 1, -1, -1):
+        v += s[i]
+    return v
+    </pre>
+</div>
+
+<div id="java" class="content" style="display:none;">
+    <h2>☕ Java</h2>
+    <b>Input: arr = [3,7,2,9,5]</b><br>
+     
+    <pre>
+public int fun5(int[] arr) {
+    int x = arr[0];
+    for (int num : arr) {
+        if (num > x) x = num;
+    }
+    return x;
+}
+    </pre>
+
+    <b>Input: s= "happy"</b><br>
+    
+    <pre>
+public String fun2(String s) {
+    if (s.isEmpty()) return s;
+    return fun2(s.substring(1)) + s.charAt(0);
+}
+    </pre>
+</div>
+
+<div id="c" class="content" style="display:none;">
+    <h2>⚙️ C Language</h2>
+    <b>Input: arr[] = {3,7,2,9,5}</b><br>
+    
+    <pre>
+int fun5(int arr[], int n){
+    int x = arr[0];
+    for(int i=1; i< n; i++)
+        if(arr[i] > x)
+            x = arr[i];
+    return x;
+}
+    </pre>
+    <b>Input: s= "happy"</b><br>
+    
+    <pre>
+void fun2(char* s) {
+    int n = strlen(s);
+    for(int i=0; i< n/2; i++){
+        char t = s[i];
+        s[i] = s[n-1-i];
+        s[n-1-i] = t;
+    }
+    printf("%s",s);
+}
+    </pre>
+</div>
+
+<div class="validation-area">
+    <h2>Enter Your Answers Here</h2>
+
+    <b>1.What is the output of the first program?</b>
+    <br>
+    <input type="text" id="maxInput" placeholder="Enter yor Answer here">
+    <br>
+
+    <b>2.What is the output of the second program?</b>
+    <br>
+    <input type="text" id="revInput" placeholder="Enter yor Answer here">
+    <br><br>
+
+    <button id="validateBtn">Check Answers</button>
+
+    <div id="nextClue" style="display:none; margin-top:20px;">
+        <a href="C:\Users\riyaz\Desktop\hack the hunt\easy\connection.html">🎉 Correct! Go to the next clue 🎉</a>
+    </div>
+</div>
+
+
+<script src="validate.js"></script>
+
+</body>
+</html>

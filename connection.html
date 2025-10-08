@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Responsive Toggle Navbar</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+    }
+
+    .navbar {
+      background-color: #333;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: white;
+    }
+
+    .nav-items {
+      display: flex;
+      gap: 15px;
+    }
+
+    .nav-items a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .toggle-btn {
+      display: none;
+      font-size: 24px;
+      cursor: pointer;
+      background: none;
+      color: white;
+      border: none;
+    }
+
+    /* Hide nav-items by default on small screens */
+    @media screen and (max-width: 768px) {
+      .nav-items {
+        display: none;
+        align-items: center;
+        background-color: #444;
+        position: absolute;
+        left: 0px;
+        top: 60px;
+        width: 100%;
+        padding: 10px 0;
+        text-align: center;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .toggle-btn {
+        display: block;
+      }
+
+      .nav-items.show {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="navbar">
+    <div class="logo">MySite</div>
+    <button class="toggle-btn" id="toggleBtn">☰</button>
+    <div class="nav-items" id="navItems">
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Projects</a>
+      <a href="#">Contact</a>
+    </div>
+  </div>
+
+  <script>
+    const toggleBtn = document.getElementById("toggleBtn");
+    const navItems = document.getElementById("navItems");
+
+    toggleBtn.addEventListener("click", () => {
+      navItems.classList.toggle("show");
+    });
+  </script>
+
+</body>
+</html>
