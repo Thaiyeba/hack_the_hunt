@@ -42,9 +42,10 @@
       const userPassword = document.getElementById('secret-password-input').value.trim().toLowerCase();
       if (userPassword === SECRET_KEY) {
         alert("🔑 Access Granted! Moving to the next level.");
-        window.location.href = "congratulations.html";
+        window.location.href = "coding.html";
       } else {
         alert("❌ Incorrect Key. Try again.");
         document.getElementById('secret-password-input').value = '';
       }
     }
+
