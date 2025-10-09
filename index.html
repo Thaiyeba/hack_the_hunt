@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Logical Reasoning - Easy Level</title>
+ <style>
+/* --- Font Import (Assuming Poppins is available, or use a reliable fallback) --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* --- General Styling --- */
+body {
+    font-family: 'Poppins', sans-serif;
+    /* Deeper, more sophisticated dark background */
+    background: linear-gradient(135deg, #0e111a, #1a1f28);
+    color: #e0e6f0; /* Soft off-white text */
+    margin: 0;
+    padding: 0;
+    display: flex; /* Center the container vertically */
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* --- Container Styling --- */
+.container {
+    width: 90%;
+    max-width: 900px;
+    /* Main box: deep, slightly transparent background for layering effect */
+    background: rgba(25, 30, 40, 0.95);
+    margin: 50px auto;
+    padding: 40px;
+    border-radius: 25px;
+    /* Soft, large shadow for floating effect */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.container:hover {
+    transform: translateY(-2px); /* Subtle lift on hover */
+}
+
+/* --- Heading Styling --- */
+h1 {
+    text-align: center;
+    /* Vibrant accent color: Teal/Cyan */
+    color: #00bcd4; 
+    font-weight: 700;
+    font-size: 2.2em;
+    margin-bottom: 40px;
+    text-shadow: 0 0 10px rgba(0, 188, 212, 0.5); /* Glowing text effect */
+}
+
+/* --- Question Box Styling --- */
+.question {
+    margin-bottom: 30px;
+    padding: 20px;
+    /* Inset look: Darker background with subtle inner shadow */
+    background: #1e2430;
+    border-radius: 15px;
+    /* Blue border for accent */
+    border: 1px solid #00bcd4; 
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.4), 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s ease-out;
+}
+
+.question:hover {
+    border-color: #ff9800; /* Subtle color change on hover to orange */
+    transform: scale(1.01);
+}
+
+label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 15px;
+    color: #e0e6f0;
+    font-size: 1.1em;
+}
+
+/* --- Input and Text Box Styling --- */
+input[type="text"] {
+    width: 90%;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    font-size: 16px;
+    /* Inset text box for a deeper cut-out feel */
+    background: #14171d; 
+    color: #00bcd4; /* Text answer in the accent color */
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.8);
+    transition: border 0.3s ease;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border: 2px solid #ff9800; /* Focus ring in orange */
+}
+
+/* --- Radio Button Options --- */
+input[type="radio"] {
+    margin-right: 10px;
+    cursor: pointer;
+    /* Accent color for the radio button */
+    accent-color: #00bcd4; 
+    transform: scale(1.2); /* Slightly larger radio buttons */
+}
+
+.options {
+    margin-left: 10px;
+    font-size: 1em;
+    color: #b0c4de; /* Lighter text for options */
+    line-height: 1.8;
+}
+
+/* --- Submit Button Styling --- */
+button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    margin-top: 35px;
+    /* Attractive gradient from cyan to a warm orange */
+    background: linear-gradient(to right, #00bcd4, #ff9800); 
+    border: none;
+    border-radius: 15px;
+    color: #1e2430; /* Darker text for contrast on the light button */
+    font-size: 1.2em;
+    font-weight: 700;
+    cursor: pointer;
+    letter-spacing: 1px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    /* Reverse the gradient and add a stronger lift/shadow */
+    background: linear-gradient(to right, #ff9800, #00bcd4);
+    transform: translateY(-3px) scale(1.01);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+}
+
+/* --- Footer Styling --- */
+.footer {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    font-size: 0.9em;
+    color: #5a6678;
+    border-top: 1px dashed #333; /* Subtle separator line */
+}
+</style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>🧠 Logical Reasoning: Easy Level</h1>
+    <form id="quizForm">
+
+      <div class="question">
+        <label>1. Introducing a boy, a girl said, "He is the son of the daughter of the father of my uncle." How is the boy related to the girl?</label>
+        <input type="text" id="q1" placeholder="Your answer here" required>
+      </div>
+
+      <div class="question">
+        <label>2. Look at this series: 36, 34, 30, 28, 24, ... What number should come next?</label>
+        <input type="text" id="q2" placeholder="Your answer here" required>
+      </div>
+
+      <div class="question">
+        <label>3. A, P, R, X, S and Z are sitting in a row. S and Z are in the centre. A and P are at the ends. R is sitting to the left of A. Who is to the right of P?</label>
+        <input type="text" id="q3" placeholder="Your answer here" required>
+      </div>
+
+      <div class="question">
+        <label>4. Riddle: I have keys but no locks. I have space but no room. You can enter but can’t go outside. What am I?</label>
+        <input type="text" id="q4" placeholder="Your answer here" required>
+      </div>
+
+      <div class="question">
+        <label>5. Riddle: What comes once in a minute, twice in a moment, but never in a thousand years?</label>
+        <input type="text" id="q5" placeholder="Your answer here" required>
+      </div>
+
+      <button type="button" onclick="checkAnswers()">Submit Answers</button>
+    </form>
+
+    <div class="footer">© 2025 Logical Reasoning Quiz | Created by You</div>
+  </div>
+
+  <script src="easy.js"></script>
+</body>
+</html>
