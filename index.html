@@ -4,157 +4,171 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Logical Reasoning - Easy Level</title>
- <style>
-/* --- Font Import (Assuming Poppins is available, or use a reliable fallback) --- */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+  
+  <style>
+    /* --- Font Import --- */
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-/* --- General Styling --- */
-body {
-    font-family: 'Poppins', sans-serif;
-    /* Deeper, more sophisticated dark background */
-    background: linear-gradient(135deg, #0e111a, #1a1f28);
-    color: #e0e6f0; /* Soft off-white text */
-    margin: 0;
-    padding: 0;
-    display: flex; /* Center the container vertically */
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-}
+    /* --- Body Styling --- */
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #0e111a, #1a1f28); /* Dark gradient background */
+      color: #e0e6f0;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
 
-/* --- Container Styling --- */
-.container {
-    width: 90%;
-    max-width: 900px;
-    /* Main box: deep, slightly transparent background for layering effect */
-    background: rgba(25, 30, 40, 0.95);
-    margin: 50px auto;
-    padding: 40px;
-    border-radius: 25px;
-    /* Soft, large shadow for floating effect */
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.05);
-    transition: transform 0.3s ease;
-}
+    /* --- Container Styling --- */
+    .container {
+      width: 90%;
+      max-width: 900px;
+      background: rgba(25, 30, 40, 0.95);
+      padding: 40px;
+      border-radius: 25px;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.7), 0 0 0 1px rgba(255,255,255,0.05);
+      transition: transform 0.3s ease;
+    }
 
-.container:hover {
-    transform: translateY(-2px); /* Subtle lift on hover */
-}
+    .container:hover {
+      transform: translateY(-2px);
+    }
 
-/* --- Heading Styling --- */
-h1 {
-    text-align: center;
-    /* Vibrant accent color: Teal/Cyan */
-    color: #00bcd4; 
-    font-weight: 700;
-    font-size: 2.2em;
-    margin-bottom: 40px;
-    text-shadow: 0 0 10px rgba(0, 188, 212, 0.5); /* Glowing text effect */
-}
+    /* --- Heading --- */
+    h1 {
+      text-align: center;
+      color: #00bcd4; /* Teal/Cyan accent */
+      font-weight: 700;
+      font-size: 2.2em;
+      margin-bottom: 40px;
+      text-shadow: 0 0 10px rgba(0, 188, 212, 0.5);
+    }
 
-/* --- Question Box Styling --- */
-.question {
-    margin-bottom: 30px;
-    padding: 20px;
-    /* Inset look: Darker background with subtle inner shadow */
-    background: #1e2430;
-    border-radius: 15px;
-    /* Blue border for accent */
-    border: 1px solid #00bcd4; 
-    box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.4), 0 4px 10px rgba(0, 0, 0, 0.3);
-    transition: all 0.2s ease-out;
-}
+    /* --- Question Box --- */
+    .question {
+      margin-bottom: 30px;
+      padding: 20px;
+      background: #1e2430;
+      border-radius: 15px;
+      border: 1px solid #00bcd4;
+      box-shadow: inset 0 3px 5px rgba(0,0,0,0.4), 0 4px 10px rgba(0,0,0,0.3);
+      transition: all 0.2s ease-out;
+    }
 
-.question:hover {
-    border-color: #ff9800; /* Subtle color change on hover to orange */
-    transform: scale(1.01);
-}
+    .question:hover {
+      border-color: #ff9800;
+      transform: scale(1.01);
+    }
 
-label {
-    font-weight: 600;
-    display: block;
-    margin-bottom: 15px;
-    color: #e0e6f0;
-    font-size: 1.1em;
-}
+    label {
+      font-weight: 600;
+      display: block;
+      margin-bottom: 15px;
+      color: #f3f3f5;
+      font-size: 1.1em;
+    }
 
-/* --- Input and Text Box Styling --- */
-input[type="text"] {
-    width: 90%;
-    padding: 12px;
-    border-radius: 10px;
-    border: none;
-    font-size: 16px;
-    /* Inset text box for a deeper cut-out feel */
-    background: #14171d; 
-    color: #00bcd4; /* Text answer in the accent color */
-    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.8);
-    transition: border 0.3s ease;
-}
+    /* --- Text Inputs --- */
+    input[type="text"] {
+      width: 90%;
+      padding: 12px;
+      border-radius: 10px;
+      border: none;
+      font-size: 16px;
+      background: #14171d;
+      color: #00bcd4;
+      box-shadow: inset 0 2px 4px rgba(0,0,0,0.8);
+      transition: border 0.3s ease;
+    }
 
-input[type="text"]:focus {
-    outline: none;
-    border: 2px solid #ff9800; /* Focus ring in orange */
-}
+    input[type="text"]:focus {
+      outline: none;
+      border: 2px solid #ff9800;
+    }
 
-/* --- Radio Button Options --- */
-input[type="radio"] {
-    margin-right: 10px;
-    cursor: pointer;
-    /* Accent color for the radio button */
-    accent-color: #00bcd4; 
-    transform: scale(1.2); /* Slightly larger radio buttons */
-}
+    /* --- Radio Buttons --- */
+    input[type="radio"] {
+      margin-right: 10px;
+      cursor: pointer;
+      accent-color: #00bcd4;
+      transform: scale(1.2);
+    }
 
-.options {
-    margin-left: 10px;
-    font-size: 1em;
-    color: #b0c4de; /* Lighter text for options */
-    line-height: 1.8;
-}
+    .options {
+      margin-left: 10px;
+      font-size: 1em;
+      color: #b0c4de;
+      line-height: 1.8;
+    }
 
-/* --- Submit Button Styling --- */
-button {
-    display: block;
-    width: 100%;
-    padding: 15px;
-    margin-top: 35px;
-    /* Attractive gradient from cyan to a warm orange */
-    background: linear-gradient(to right, #00bcd4, #ff9800); 
-    border: none;
-    border-radius: 15px;
-    color: #1e2430; /* Darker text for contrast on the light button */
-    font-size: 1.2em;
-    font-weight: 700;
-    cursor: pointer;
-    letter-spacing: 1px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
-    transition: all 0.3s ease;
-}
+    /* --- Button Styling --- */
+    button {
+      display: block;
+      width: 100%;
+      padding: 15px;
+      margin-top: 35px;
+      background: linear-gradient(to right, #00bcd4, #ff9800);
+      border: none;
+      border-radius: 15px;
+      color: #1e2430;
+      font-size: 1.2em;
+      font-weight: 700;
+      cursor: pointer;
+      letter-spacing: 1px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+      transition: all 0.3s ease;
+    }
 
-button:hover {
-    /* Reverse the gradient and add a stronger lift/shadow */
-    background: linear-gradient(to right, #ff9800, #00bcd4);
-    transform: translateY(-3px) scale(1.01);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
-}
+    button:hover {
+      background: linear-gradient(to right, #ff9800, #00bcd4);
+      transform: translateY(-3px) scale(1.01);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.6);
+    }
 
-/* --- Footer Styling --- */
-.footer {
-    text-align: center;
-    margin-top: 40px;
-    padding-top: 20px;
-    font-size: 0.9em;
-    color: #5a6678;
-    border-top: 1px dashed #333; /* Subtle separator line */
-}
-</style>
+    /* --- Footer --- */
+    .footer {
+      text-align: center;
+      margin-top: 40px;
+      padding-top: 20px;
+      font-size: 0.9em;
+      color: #5a6678;
+      border-top: 1px dashed #333;
+    }
+
+    /* --- Secret Password Section --- */
+    #password-section {
+      display: none;
+      margin-top: 40px;
+      padding: 30px;
+      border: 3px solid #ff9800;
+      border-radius: 15px;
+      background: #283040;
+      text-align: center;
+    }
+
+    #password-section h2 {
+      color: #ff9800;
+      margin-bottom: 20px;
+    }
+
+    #password-section button {
+      margin-top: 20px;
+      background: linear-gradient(to right, #ff9800, #d35400);
+    }
+
+    #password-section button:hover {
+      background: linear-gradient(to right, #d35400, #ff9800);
+    }
+  </style>
 </head>
-<body>
 
+<body>
   <div class="container">
     <h1>🧠 Logical Reasoning: Easy Level</h1>
     <form id="quizForm">
-
       <div class="question">
         <label>1. Introducing a boy, a girl said, "He is the son of the daughter of the father of my uncle." How is the boy related to the girl?</label>
         <input type="text" id="q1" placeholder="Your answer here" required>
@@ -183,9 +197,18 @@ button:hover {
       <button type="button" onclick="checkAnswers()">Submit Answers</button>
     </form>
 
+    <div id="password-section">
+      <h2>🔓 The Secret Challenge</h2>
+      <p>You must enter the 5-character key.</p>
+      <ul style="text-align:left;">
+        <li>Hint: Password starts with first character fron first answer and ends with last character from last answer</li>
+       
+      </ul>
+      <input type="password" id="secret-password-input" maxlength="5" placeholder="Enter 5-character key here" required>
+      <button type="button" onclick="checkPassword()">Unlock Next Level</button>
+    </div>
+
     <div class="footer">© 2025 Logical Reasoning Quiz | Created by You</div>
   </div>
-
-  <script src="easy.js"></script>
 </body>
 </html>
