@@ -8,6 +8,7 @@
       q5: "m"
     };
 
+
     function calculateSecretKey() {
       const a1 = correctAnswers.q1.charAt(0);
       const a2 = correctAnswers.q2.charAt(1);
@@ -48,4 +49,5 @@
         document.getElementById('secret-password-input').value = '';
       }
     }
+
 
